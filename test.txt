@@ -1,2 +1,3 @@
 Learning Git is cool
 Never give up
+Add 3rd line
