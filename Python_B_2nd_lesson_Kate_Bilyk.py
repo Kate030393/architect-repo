@@ -1,3 +1,5 @@
+# Task 1
+
 num_1 = int(input("Enter first number: "))
 num_2 = int(input("Enter second number: "))
 num_3 = int(input("Enter third number: "))
@@ -52,3 +54,19 @@ functions = {
 for key in functions:
     if key == action:
         print(functions[key](num_1, num_2, num_3))
+
+# Task 2
+
+meters = int(input("Enter the distance in meters: "))
+convert_type = input("Choose the unit mile/inch/yard/: ")
+convert_dict = {
+    "mile": lambda x: x / 1609,
+    "inch": lambda x: x / 0.0254,
+    "yard": lambda x: x / 0.9144,
+}
+for key in convert_dict:
+    if key == convert_type:
+        print(convert_dict[key](meters))
+    else:
+        print("Error. Choose correct unit")
+
