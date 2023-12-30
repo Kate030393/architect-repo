@@ -59,14 +59,30 @@ for key in functions:
 
 meters = int(input("Enter the distance in meters: "))
 convert_type = input("Choose the unit mile/inch/yard/: ")
+converted_distance = 0
+
+# Variant 1
 convert_dict = {
     "mile": lambda x: x / 1609,
     "inch": lambda x: x / 0.0254,
     "yard": lambda x: x / 0.9144,
 }
-for key in convert_dict:
-    if key == convert_type:
-        print(convert_dict[key](meters))
-    else:
-        print("Error. Choose correct unit")
+if convert_type not in convert_dict.keys():
+    print("Error. Choose correct unit")
+else:
+    for key in convert_dict:
+        if key == convert_type:
+            converted_distance = convert_dict[key](meters)
+            print(f"{meters} meters = {converted_distance} {key}")
+            break
+
+# Variant 2
+if convert_type == "mile":
+    print(f"{meters} meters = {meters / 1609} miles")
+elif convert_type == "inch":
+    print(f"{meters} meters = {meters / 0.0254} inches")
+elif convert_type == "yard":
+    print(f"{meters} meters = {meters / 0.9144} yards")
+else:
+    print("Error. Choose correct unit")
 
