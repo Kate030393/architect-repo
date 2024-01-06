@@ -1,3 +1,4 @@
+
 # TASK 1
 try:
     user_choice = int(input("Which day of the week you want to see? Enter a number from 1 to 7: "))
