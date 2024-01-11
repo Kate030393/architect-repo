@@ -126,12 +126,100 @@
 
 # ADDITIONAL TASK 2
 
-length = 5
-star = '* '
-list = [range(1, length + 1)]
-print(range(1, length + 1))
-for i in range(1, length + 1):
-    print(star * i)
-
-# for i in list[::-1]:
-#     print(star * i)
+length = int(input("Enter the length of the longest side: "))
+figure_choice = int(input("Enter a figure`s number (from 1 to 10): "))
+star = '*'
+space = " "
+string = ""
+match figure_choice:
+    case 1:
+        a = length
+        while a > 0:
+            string = star * a
+            print(string.rjust(length))
+            a -= 1
+    case 2:
+        for b in range(1, length + 1):
+            print(star * b)
+    case 3:
+        v = length
+        while v > 0:
+            final_row = star * v
+            print(final_row.center(length))
+            v -= 2
+    case 4:
+        g = 1
+        if length % 2 == 1:
+            g = 1
+        else:
+            g = 2
+        while g <= length:
+            final_row = star * g
+            print(final_row.center(length))
+            g += 2
+    case 5:
+        d = length
+        while d > 0:
+            final_row = star * d
+            print(final_row.center(length))
+            d -= 2
+        if d == -1:
+            d += 4
+        else:
+            d += 2
+        while d <= length:
+            final_row = star * d
+            print(final_row.center(length))
+            d += 2
+    case 6:
+        space, star = star, space
+        e = length - 2
+        while e >= 0:
+            final_row = star * e
+            print(final_row.center(length, space))
+            e -= 2
+        while e < length:
+            if e == -2:
+                e += 2
+            final_row = star * e
+            print(final_row.center(length, space))
+            e += 2
+    case 7:
+        for z in range(1, length // 2 + 1):
+            print(star * z)
+        if length % 2 == 1:
+            z = length // 2 + 1
+        else:
+            z = length // 2
+        while z > 0:
+            print(star * z)
+            z -= 1
+    case 8:
+        s = 1
+        if length % 2 == 1:
+            half_length = length // 2 + 1
+        else:
+            half_length = length // 2
+        while s <= half_length:
+            string = star * s
+            print(string.rjust(half_length))
+            s += 1
+        if s % 2 == 0:
+            s -= 1
+        else:
+            s -= 2
+        while s > 0:
+            string = star * s
+            print(string.rjust(half_length))
+            s -= 1
+    case 9:
+        i = length
+        while i > 0:
+            print(star * i)
+            i -= 1
+    case 10:
+        k = 1
+        while k <= length:
+            string = star * k
+            print(string.rjust(length))
+            k += 1
