@@ -137,3 +137,16 @@ except ValueError as error:
     print("Your input is not an integer. Please enter a number from 1 to 10")
 except Exception as error:
     print(f"Error of input: {error}")
+
+first_column = int(input("Enter the number for first column, that you want to replace: "))
+second_column = int(input("Enter the number for second column, that you want to replace: "))
+
+i = 0
+for i in range(len(matrix)):
+    while i < len(matrix):
+        matrix[i][first_column - 1], matrix[i][second_column - 1] = matrix[i][second_column - 1], matrix[i][first_column - 1]
+        i += 1
+for row in matrix:
+    for number in row:
+        print(number, end=" ")
+    print()
